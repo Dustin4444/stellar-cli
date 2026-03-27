@@ -24,9 +24,16 @@ async fn fee_stats_text_output() {
         .arg("text")
         .assert()
         .success()
-        .stdout(predicates::str::contains("Max Soroban Inclusion Fee:"))
-        .stdout(predicates::str::contains("Max Inclusion Fee:"))
-        .stdout(predicates::str::contains("Latest Ledger:"));
+        .stdout(predicates::str::contains("Soroban Inclusion Fee:"))
+        .stdout(predicates::str::contains("Inclusion Fee:"))
+        .stdout(predicates::str::contains("Latest Ledger:"))
+        .stdout(predicates::str::contains("Max:"))
+        .stdout(predicates::str::contains("Min:"))
+        .stdout(predicates::str::contains("Mode:"))
+        .stdout(predicates::str::contains("P50:"))
+        .stdout(predicates::str::contains("P99:"))
+        .stdout(predicates::str::contains("Transaction Count:"))
+        .stdout(predicates::str::contains("Ledger Count:"));
 }
 
 #[tokio::test]
