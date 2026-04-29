@@ -2,7 +2,7 @@ use crate::commands::global;
 use clap::Subcommand;
 
 mod default;
-pub mod stats;
+mod stats;
 mod unset;
 
 #[derive(Debug, Subcommand)]
